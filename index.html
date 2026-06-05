@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>ماشین حساب ساده</title>
+    <style>
+        body { font-family: Tahoma; text-align: center; margin-top: 50px; }
+        input, button { padding: 10px; margin: 5px; font-size: 18px; }
+        .box {
+            background: #f0f0f0;
+            display: inline-block;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        button {
+            background: #1e88e5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        #result { font-size: 24px; font-weight: bold; color: darkgreen; margin-top: 20px; }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>جمع دو عدد</h2>
+    <input type="number" id="num1" placeholder="عدد اول">
+    <input type="number" id="num2" placeholder="عدد دوم">
+    <br>
+    <button onclick="addNumbers()">جمع کن</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function addNumbers() {
+        let a = parseFloat(document.getElementById('num1').value);
+        let b = parseFloat(document.getElementById('num2').value);
+        if (isNaN(a)) a = 0;
+        if (isNaN(b)) b = 0;
+        let sum = a + b;
+        document.getElementById('result').innerHTML = "نتیجه: " + sum;
+    }
+</script>
+</body>
+</html>
